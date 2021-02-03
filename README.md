@@ -1,8 +1,8 @@
 # C++ - Dummy Guide
 #### This is a repository about C++ fundamentals. It is supposed to serve as a simple reference guide and it contains a brief summary about the main concepts and a few examples and exercises. In this way, as I am also learning/studying much of the content here, the code and explanations may not (probably not) be the most efficient, readable and clear, so if you have suggestions of improvements, please feel free to contribute.
-
-#### Table of Contents
-
+---
+## Table of Contents
+---
 ## Compilation and Linking
 _... coming soon_
 ## Variables and Constants
