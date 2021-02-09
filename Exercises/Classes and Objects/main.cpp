@@ -31,3 +31,30 @@ Here is what your project files should look like:
 #include <vector>
 #include <string>
 #include "Movies.h"
+
+int main()
+{
+    Movies myMovies;
+    myMovies.displayAllMovies(); //Collection is empty
+
+    myMovies.addMovie("Interestelar", "PG", 3); //OK
+    myMovies.addMovie("Big", "PG-13", 2);       //OK
+    myMovies.addMovie("Star Wars", "PG", 5);    //OK
+    myMovies.addMovie("Cinderella", "PG", 7);   //OK
+
+    myMovies.displayAllMovies(); //OK
+
+    myMovies.addMovie("Cinderella", "PG", 7); //ERROR: repeated
+    myMovies.addMovie("Ice Age", "PG", 12);   //OK
+
+    myMovies.displayAllMovies(); //OK
+
+    myMovies.incrementWatchedCount("Big");     //OK
+    myMovies.incrementWatchedCount("Ice Age"); //OK
+
+    myMovies.displayAllMovies();
+
+    myMovies.incrementWatchedCount("Avengers"); //ERROR: not present
+
+    return 0;
+}

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _MOVIES_H_
+#define _MOVIES_H_
 
 #include <iostream>
 #include <vector>
@@ -11,8 +12,8 @@ private:
     std::vector<Movie> allMovies;
 
 public:
-    //Constructor w/ default paramenters - declaration:
-    Movies(Movie movie);
+    //No args onstructor  - declaration:
+    Movies();
 
     //Copy constructor - declaration:
     // Movies(const Movies &sourceObj);
@@ -34,3 +35,5 @@ public:
     //  - codeStatus = 2: not possible to increment the count of a non-existent movie
     void displayErrorMessage(int codeStatus, std::string movieName);
 };
+
+#endif

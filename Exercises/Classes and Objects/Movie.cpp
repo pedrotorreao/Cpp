@@ -3,14 +3,14 @@
 #include "Movie.h"
 
 //Constructor w/ default parameters - specification:
-Movie::Movie(std::string movieName = "None", std::string movieRating = "None", int watchCount = 0)
+Movie::Movie(std::string movieName, std::string movieRating, int watchCount)
     : name{movieName}, rating{movieRating}, watched{watchCount}
 {
 }
 
 //Copy constructor - specification:
 Movie::Movie(const Movie &sourceObj)
-    : name{sourceObj.name}, rating{sourceObj.name}, watched{sourceObj.watched}
+    : name{sourceObj.name}, rating{sourceObj.rating}, watched{sourceObj.watched}
 {
 }
 

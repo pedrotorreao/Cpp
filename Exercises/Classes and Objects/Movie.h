@@ -1,4 +1,5 @@
-#pragma once
+#ifndef _MOVIE_H_
+#define _MOVIE_H_
 
 #include <iostream>
 #include <string>
@@ -36,3 +37,5 @@ public:
     //Display movie info - declaration:
     void displayMovieInfo(void) const;
 };
+
+#endif
