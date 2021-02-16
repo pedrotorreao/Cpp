@@ -5,44 +5,45 @@
 ---
 * #### [C++ Compilation Process](content/compilation-process/README.md)
 _... coming soon_
-* #### Variables and Constants
+
+* #### [Variables and Constants](content/variables-and-constants/README.md)
 _... coming soon_
 
-* #### Arrays and Vectors
+* #### [Arrays and Vectors](content/arrays-and-vectors/README.md)
 _... coming soon_
 
-* #### Statements and Operators
+* #### [Statements and Operators](content/statements-and-operators/README.md)
 _... coming soon_
 
-* #### Controlling Program Flow
+* #### [Controlling Program Flow](content/controlling-program-flow/README.md)
 _... coming soon_
 
-* #### Characters and Strings
+* #### [Characters and Strings](content/characters-and-strings/README.md)
 _... coming soon_
 
-* #### Functions
+* #### [Functions](content/functions/README.md)
 _... coming soon_
 
-* #### Header files
+* #### [Header files](content/header-files/README.md)
 _... coming soon_
 
-* #### Classes and Objects
+* #### [Classes and Objects](content/classes-and-objects/README.md)
 _... coming soon_
 
-* #### Operator Overloading
+* #### [Operator Overloading](content/operator-overloading/README.md)
 _... coming not so soon_
 
-* #### Inheritance
+* #### [Inheritance](content/inheritance/README.md)
 _... coming not so soon_
 
-* ##### Polymorphism
+* #### [Polymorphism](content/polymorphism/README.md)
 _... coming not so soon_
 
-* #### Smart Pointers
+* #### [Smart Pointers](content/smart-pointers/README.md)
 _... coming not so soon_
 
-* #### I/O Streams
+* #### [I/O Streams](content/io-streams/README.md)
 _... coming not so soon_
 
-* #### Standard Template Library - STL
+* #### [Standard Template Library - STL](content/standard-template-library/README.md)
 _... actually, this is gonna take a while_
