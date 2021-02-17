@@ -5,7 +5,6 @@ This is a repository about C++ fundamentals. It is supposed to serve as a simple
 ### Table of Contents
 
 * #### [C++ Compilation Process](content/compilation-process/README.md)
-_... coming soon_
 
 * #### [Variables and Constants](content/variables-and-constants/README.md)
 _... coming soon_
