@@ -56,7 +56,7 @@ int main()
     return 0;
 }
 */
-// Primitive Strings: Special case of primitive arrays, a C string is simply a primitive array of characters terminated with a zero. This is sometimes also called a null terminated string. 
+// Primitive Strings: Special case of primitive arrays, a C string is simply a primitive array of characters terminated with a zero. This is sometimes also called a null terminated string.
 /*
 #include <cstdio>
 using namespace std;
@@ -327,7 +327,7 @@ int main()
     return 0;
 }
 */
-// Characters and Strings: the fundamental string type is an array of characters terminated with a null value. This is sometimes referred to as a C-string or a null terminated string to distinguish it from object orientated string types. 
+// Characters and Strings: the fundamental string type is an array of characters terminated with a null value. This is sometimes referred to as a C-string or a null terminated string to distinguish it from object orientated string types.
 /*
 #include <cstdio>
 
@@ -360,7 +360,7 @@ Storage Duration: used to define the duration or lifetime of a variable. By defa
 - extern: variables which are defined in a separate translation unit and are linked with your code by the linker step of the compilation process.
 
 */
-// References: it works similar to a pointer with some significant diffs: a) assigning a ref. is different and doesn't involve using the address of operator. Getting the value referred to by a ref. doesn't involve the value of or de-ref. operator. You cannot refer to the ref. itself. That is you cannot take a ref. of a ref.. You cannot have a pointer to a ref. and you cannot have an array of ref.. The ref. cannot be null, cannot be un-initialized, and cannot be changed to refer to another variable. 
+// References: it works similar to a pointer with some significant diffs: a) assigning a ref. is different and doesn't involve using the address of operator. Getting the value referred to by a ref. doesn't involve the value of or de-ref. operator. You cannot refer to the ref. itself. That is you cannot take a ref. of a ref.. You cannot have a pointer to a ref. and you cannot have an array of ref.. The ref. cannot be null, cannot be un-initialized, and cannot be changed to refer to another variable.
 /*
 #include <iostream>
 
@@ -629,31 +629,63 @@ void displayData(int *ptr, int sentinel) {
     std::cout << std::endl;
 }
 */
+//Section - Keypoints:
+/*
+-- Lecture 67: Increment and Decrement Operators
+		int counter = 10;
+		int result = 0;
+a) pre-increment:
+	++num: increment it and then use it
+	Ex.: 
+		result = ++counter; //counter = counter + 1 = 11; result = counter = 11;
+		//counter = 11 and result = 11
+b) pos-increment:
+	num++: use it and then increment it 
+	Ex.:
+		result = counter++; //result = counter = 10; counter = counter + 1 = 11;
+		//result = 10 and counter = 11;
 
+-- Lecture 68: Mixed Expressions and Conversions
 
+- C++ operations occur on same type operands. If operands are of different types, C++ will try to automatically convert types (coercion). 
+If it can't, a compiler error will occur.
 
+- Higher vs Lower types: based on the size of the values the type can hold. So a long double is 
+a higher type than a long and a Long is of higher type than an int.
 
+- The idea is that we can typically convert from a lower type to a larger type automatically since the
+lower types value will fit into the higher types value. Short and character types are always converted to integers.
 
+a) Promotion: when we convert a lower type to a higher type.
+	Ex.: when we add an integer and a double. In this case we promote the integer to a double and then do the calculation.
 
+b) Demotion: when we convert a higher type to a lower type.
+	Ex.: suppose we want to store 12.5 into an int variable. A demotion happens and the decimal part of 12.5 is truncated and we're left just with
+		the integer 12.
 
+c) Explicit type casting - static_cast<type>:
+	Ex.:
+		int totalAmount {100}; int totalNumber {8}; double average {0.0};
 
+		average = totalAmount/totalNumber; //int division, so average = 12
+		average = static_cast<double>(totalAmount)/totalNumber; //one of the operands is a double, the compiler will convert 
+		//the total number to a double and perform a double division. average = 12.5
+		//in older versions, we could do:
+		average = (double)totalAmount/totalNumber;
+	Ex.:
+		#include <iostream>
+		#include <string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		int main()
+		{
+  			int a = 100;
+  			int b = 12;
+  			double y = a / b;
+  			double x = (double)a / b;
+  			double z = static_cast<double>(a) / b;
+  
+  			std::cout << y << "\n"; //outputs 8
+  			std::cout << x << "\n"; //outputs 8.33333
+  			std::cout << z << "\n"; //outputs 8.33333
+		}
+*/
