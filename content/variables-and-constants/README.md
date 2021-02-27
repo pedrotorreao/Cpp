@@ -120,11 +120,38 @@ The default type for integer literals is `int` but, as with variables, there are
 
 The default type for floating-poin literals is `double` but, as with variables, there are a few variations regarding size and sign.
 
-* Characters
-* Escape sequences
-* String literals
+* Characters - A character literal is created by enclosing a single character inside single quotation marks. See example below:
+```c++
+'A'            // character A 
+```
+The default type for characters literals is `char` but, as with variables, there are a few variations regarding size and sign.
+
+* String literals - A string literal is a sequence of characters enclosed in double-quote marks. See example below:
+```c++
+"What a beautiful day"      // this sentence is a string literal
+```
+The default type for string literals is also `char` but, as with variables, there are a few variations regarding size and sign.
+
+* Escape sequences - special characters that cannot be typed and/or have special meaning in C++. See a non-exhaustive list below:
+  * `'\n'` - adds a new line
+  * `'\t'` - adds a horizontal tab
+  * `'\v'` - adds a vertical tab
+  * `'\r'` - carriage return 
+  * `'\0'` - null character
+  * `'\\'` - backslash
+  * `'\''` - allows to use single quotes
+  * `'\"'` - allows to use double quotes
+  * `'\?'` - allows the use of quotation mark as text
 
 #### Constant variables
+
+Variables whose values cannot be modified. To declare a constant variable, we add the `const` keyword before the type. See below:
+```c++
+const int age = 27; /*that's it, I am forever 27*/
+age = 28; /*ERROR: Sorry, I am forever young!*/
+```
+
+In the example above, the `const` keyword is used to declare a constant integer named `age`. Any attempts to change the value of `age` will result in an error message.
 
 ### References
 * [The Cherno - Youtube](https://www.youtube.com/watch?v=zB9RI8_wExo&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=8)

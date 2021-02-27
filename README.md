@@ -13,7 +13,6 @@ In case you want to quickly run and test your code, you can run it using the fol
 * #### [C++ Compilation Process](content/compilation-process/README.md)
 
 * #### [Variables and Constants](content/variables-and-constants/README.md)
-_... coming soon_
 
 * #### [Arrays and Vectors](content/arrays-and-vectors/README.md)
 
