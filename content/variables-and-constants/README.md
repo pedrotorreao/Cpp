@@ -57,7 +57,7 @@ char myFavteLetter, yourFavLetter;
 * Initialization
 
 The variables declared above hold unspecified values until they are assigned values for the first time (initialized). Therefore, using them before their initialization may result in unspecified behaviour or compilation errors.
-> Syntax: `type variable_name = initial_value;`
+> C initialization - Syntax: `type variable_name = initial_value;`
 
 Examples:
 ```c++
@@ -68,12 +68,67 @@ float height = 1.85;
 /*declares a char variable named favLetter and initializes it with value Z*/
 char favoriteLetter = 'Z'; 
 ```
+> Constructor initialization - Syntax: `type variable_name (initial_value);`
 
+Examples:
+```c++
+/*declares an int variable named age and initializes it with value 27*/
+int age (27); 
+/*declares a float variable named height and initializes it with value 1.85*/
+float height (1.85); 
+/*declares a char variable named favLetter and initializes it with value Z*/
+char favoriteLetter ('Z'); 
+```
+
+> Uniform initialization - Syntax: `type variable_name {initial_value};`
+
+Examples:
+```c++
+/*declares an int variable named age and initializes it with value 27*/
+int age {27}; 
+/*declares a float variable named height and initializes it with value 1.85*/
+float height {1.85}; 
+/*declares a char variable named favLetter and initializes it with value Z*/
+char favoriteLetter {'Z'}; 
+```
 ### Constants
 
+Constants are simply expressions with a fixed value. Constants can be subdivided in literals and constant variables.
+
+#### Literals
+
+Literals are data used for representing fixed values and used to express particular values within the source code of a program. In the example below
+> `age = 27;`
+
+the number `27` being assigned to `age` is a literal constant. We can classify literals into the following categories:
+
+* Integers - numerical constants that identify integer values without any fractional or exponential part and they can be represented as decimal numbers (base 10), octal numbers (base 8 - preceded by a `0`) and hexadecimal numbers (base 16 - preceded by `0x`). See example below:
+```c++
+27      // decimal
+033     // octal
+0x1B    // hexadecimal
+```
+
+The default type for integer literals is `int` but, as with variables, there are a few variations regarding size and sign.
+
+* Floating-point: used to express real values, with decimals and/or exponents and can include a decimal point, an e character (for exponencial numbers), or both. See example below:
+```c++
+1.41421            // square root of 2
+2.99792458e9       // speed of light in a vaccum
+6.67430e-11        // gravitational constant
+```
+
+The default type for floating-poin literals is `double` but, as with variables, there are a few variations regarding size and sign.
+
+* Characters
+* Escape sequences
+* String literals
+
+#### Constant variables
 
 ### References
 * [The Cherno - Youtube](https://www.youtube.com/watch?v=zB9RI8_wExo&list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb&index=8)
 * [C plus plus](https://www.cplusplus.com/doc/tutorial/variables/)
-* [Learn Cpp]()
-* [Cpp Reference]()
+* [Learn Cpp](https://www.learncpp.com/cpp-tutorial/introduction-to-variables/)
+* [Cpp Reference](https://en.cppreference.com/w/cpp/language/identifiers)
+* [Programiz](https://www.programiz.com/cpp-programming/variables-literals)
