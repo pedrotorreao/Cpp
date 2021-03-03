@@ -11,6 +11,8 @@ public:
     MyString(const MyString &src); // Copy constructor
     ~MyString();                   // Destructor
 
+    MyString &operator=(const MyString &rhs); //Copy assignment
+
     // Getters:
     void displayMyString() const;
     int getMyStringLength() const;

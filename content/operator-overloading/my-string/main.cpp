@@ -7,6 +7,10 @@ int main()
     MyString userName("James");  // Overloaded constructor
     MyString copyName{userName}; // Copy constructor
 
+    emptyStr = copyName; // Copy assignment
+    userName = "John";
+    copyName = userName;
+
     emptyStr.displayMyString();
     userName.displayMyString();
     copyName.displayMyString();

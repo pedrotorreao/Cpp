@@ -42,6 +42,30 @@ MyString::~MyString()
     delete[] str;
 }
 
+// Copy assignment:
+MyString &MyString::operator=(const MyString &rhs)
+{
+    std::cout << "...calling copy assignment"
+              << "\n";
+
+    // this is a pointer for the current object, the lhs of the assignment
+    if (this == &rhs) // Checks for self-assignment
+    {
+        return *this;
+    }
+
+    // Deallocate storage for this->str, clearing whatever is on str, since it's gonna be overwritten:
+    delete[] this->str;
+
+    // Allocate storage for deep copy:
+    str = new char[std::strlen(rhs.str) + 1];
+
+    // Perform the copy:
+    std::strcpy(this->str, rhs.str);
+
+    return *this;
+}
+
 void MyString::displayMyString() const
 {
     std::cout << str << " : " << getMyStringLength() << "\n";
