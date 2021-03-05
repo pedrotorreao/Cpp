@@ -9,9 +9,11 @@ public:
     MyString();                    // No args constructor
     MyString(const char *s);       // Overloaded constructor
     MyString(const MyString &src); // Copy constructor
+    MyString(MyString &&src);      // Move constructor
     ~MyString();                   // Destructor
 
     MyString &operator=(const MyString &rhs); //Copy assignment
+    MyString &operator=(MyString &&rhs);      //Move assignment
 
     // Getters:
     void displayMyString() const;

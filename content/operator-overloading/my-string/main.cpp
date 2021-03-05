@@ -8,8 +8,8 @@ int main()
     MyString copyName{userName}; // Copy constructor
 
     emptyStr = copyName; // Copy assignment
-    userName = "John";
-    copyName = userName;
+    userName = "John";   // Move assignment
+    copyName = userName; // Copy assignment
 
     emptyStr.displayMyString();
     userName.displayMyString();
