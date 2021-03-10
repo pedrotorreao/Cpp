@@ -12,8 +12,12 @@ public:
     MyString(MyString &&src);      // Move constructor
     ~MyString();                   // Destructor
 
-    MyString &operator=(const MyString &rhs); //Copy assignment
-    MyString &operator=(MyString &&rhs);      //Move assignment
+    MyString &operator=(const MyString &rhs); // Copy assignment
+    MyString &operator=(MyString &&rhs);      // Move assignment
+
+    MyString operator-() const;                    // Make object lowercase (overloading the '-' operator)
+    MyString operator+(const MyString &rhs) const; // Concatenate objects (overloading the '+' operator)
+    bool operator==(const MyString &rhs) const;    // Check for equality (overloading the '==' operator)
 
     // Getters:
     void displayMyString() const;

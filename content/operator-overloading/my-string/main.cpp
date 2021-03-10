@@ -15,5 +15,18 @@ int main()
     userName.displayMyString();
     copyName.displayMyString();
 
+    std::cout << "copyName is the same as userName? " << (copyName == userName) << "\n"; // Check for equality
+    std::cout << "emptyStr is the same as copyName? " << (emptyStr == copyName) << "\n"; // Check for equality
+
+    emptyStr = -userName; // Make a lowercase copy
+
+    emptyStr.displayMyString();
+    userName.displayMyString();
+    copyName.displayMyString();
+
+    MyString everybody = emptyStr + " " + userName + " " + copyName; // Concatenate objects
+
+    everybody.displayMyString();
+
     return 0;
 }

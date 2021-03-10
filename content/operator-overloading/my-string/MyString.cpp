@@ -95,6 +95,48 @@ MyString &MyString::operator=(MyString &&rhs)
     return *this;
 }
 
+// Make object lowercase (overloading the '-' operator):
+MyString MyString::operator-() const
+{
+    char *buff = new char[std::strlen(this->str) + 1];
+    std::strcpy(buff, this->str);
+
+    for (size_t i{0}; i < std::strlen(buff); ++i)
+    {
+        buff[i] = std::tolower(buff[i]);
+    }
+
+    MyString temp{buff};
+    delete[] buff;
+
+    return temp;
+}
+
+// Concatenate objects (overloading the '+' operator):
+MyString MyString::operator+(const MyString &rhs) const
+{
+    size_t buffSize = std::strlen(this->str) + std::strlen(rhs.str) + 1;
+    char *buff = new char[buffSize];
+
+    std::strcpy(buff, this->str);
+    std::strcat(buff, rhs.str);
+
+    MyString temp{buff};
+    delete[] buff;
+
+    return temp;
+}
+
+// Check for equality (overloading the '==' operator):
+bool MyString::operator==(const MyString &rhs) const
+{
+    if (std::strcmp(this->str, rhs.str) == 0)
+    {
+        return true;
+    }
+    return false;
+}
+
 void MyString::displayMyString() const
 {
     std::cout << str << " : " << getMyStringLength() << "\n";
