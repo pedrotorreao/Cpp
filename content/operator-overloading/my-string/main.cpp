@@ -28,5 +28,10 @@ int main()
 
     everybody.displayMyString();
 
+    emptyStr = "Joe"; // Move assignment
+
+    bool cmpStr = (emptyStr > userName);
+    std::cout << (cmpStr ? "emptyStr holds the larger string" : "userName is the same size or larger") << "\n";
+
     return 0;
 }

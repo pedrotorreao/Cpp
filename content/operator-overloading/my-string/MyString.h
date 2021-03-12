@@ -2,6 +2,7 @@
 
 class MyString
 {
+    friend bool operator>(const MyString &lhs, const MyString &rhs); // Compares string sizes
 private:
     char *str; // pointer to a char[] that holds a C-style string
 
@@ -16,7 +17,7 @@ public:
     MyString &operator=(MyString &&rhs);      // Move assignment
 
     MyString operator-() const;                    // Make object lowercase (overloading the '-' operator)
-    MyString operator+(const MyString &rhs) const; // Concatenate objects (overloading the '+' operator)
+    MyString operator+(const MyString &rhs) const; // Concatenate objects (overloading the '+' operator). Note: the lhs part must be an object.
     bool operator==(const MyString &rhs) const;    // Check for equality (overloading the '==' operator)
 
     // Getters:

@@ -149,3 +149,13 @@ const char *MyString::getMyString() const
 {
     return str;
 }
+
+// Compares string sizes:
+bool operator>(const MyString &lhs, const MyString &rhs)
+{
+    if (std::strlen(lhs.str) > std::strlen(rhs.str))
+    {
+        return true;
+    }
+    return false;
+}
