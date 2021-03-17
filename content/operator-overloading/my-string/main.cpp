@@ -33,5 +33,12 @@ int main()
     bool cmpStr = (emptyStr > userName);
     std::cout << (cmpStr ? "emptyStr holds the larger string" : "userName is the same size or larger") << "\n";
 
+    std::cout << "Username: " << userName << "\n";
+
+    std::cout << "Enter new username: ";
+    std::cin >> userName;
+
+    std::cout << "Username: " << userName << "\n";
+
     return 0;
 }

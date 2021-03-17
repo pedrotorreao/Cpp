@@ -159,3 +159,24 @@ bool operator>(const MyString &lhs, const MyString &rhs)
     }
     return false;
 }
+
+// Overloads the stream insertion operator:
+std::ostream &operator<<(std::ostream &os, const MyString &obj)
+{
+    os << obj.str; // we can access private data directly since friendship was granted
+    // os << obj.getMyString(); // in case there's no friendship, use public methods
+
+    return os;
+}
+
+// Overloads the stream extraction operator
+std::istream &operator>>(std::istream &is, MyString &obj)
+{
+    char *buff = new char[1000];
+    is >> buff;
+
+    obj = MyString{buff}; // Considering that copy or move assignments are present
+    delete[] buff;
+
+    return is;
+}
