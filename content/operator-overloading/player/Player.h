@@ -16,4 +16,8 @@ public:
   Player(const Player &srcPlayer);                                                     // Copy constructor
   Player(Player &&srcPlayer);                                                          // Move constructor
   ~Player();                                                                           // Destructor
+
+  /* overloading the assignment operators */
+  Player &operator=(const Player &rhs); // Copy assignment
+  Player &operator=(Player &&rhs);      // Move assignment
 };

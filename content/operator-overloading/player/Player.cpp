@@ -80,9 +80,64 @@ Player::~Player()
   std::cout << "... destructor called"
             << "\n";
 }
+
+/* overloading the assignment operators */
+
 // Copy assignment:
+Player &Player::operator=(const Player &rhs)
+{
+  if (this == &rhs)
+  {
+    return *this;
+  }
+
+  delete[] this->userName;
+  delete[] this->userClass;
+  this->userXP = 0;
+  this->userHP = 0;
+
+  this->userName = new char[std::strlen(rhs.userName) + 1];
+  std::strcpy(this->userName, rhs.userName);
+
+  this->userClass = new char[std::strlen(rhs.userClass) + 1];
+  std::strcpy(this->userClass, rhs.userClass);
+
+  this->userXP = rhs.userXP;
+  this->userHP = rhs.userHP;
+
+  std::cout << "... copy assignment called"
+            << "\n";
+
+  return *this;
+}
 
 // Move assignment:
+Player &Player::operator=(Player &&rhs)
+{
+  if (this == &rhs)
+  {
+    return *this;
+  }
+
+  delete[] this->userName;
+  delete[] this->userClass;
+  this->userXP = 0;
+  this->userHP = 0;
+
+  this->userName = rhs.userName;
+  rhs.userName = nullptr;
+
+  this->userClass = rhs.userClass;
+  rhs.userClass = nullptr;
+
+  this->userXP = rhs.userXP;
+  this->userHP = rhs.userHP;
+
+  std::cout << "... move assignment called"
+            << "\n";
+
+  return *this;
+}
 
 // Overloaded operators as member methods:
 

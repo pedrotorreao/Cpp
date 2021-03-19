@@ -10,7 +10,8 @@ int main()
   Player player4("JohnDoe", "Soldier", 50, 50);   // Overloaded constructor
   Player player5{player4};                        // Copy constructor
 
-  //player1 = Player("JohnDoe", "Soldier", 50, 50); // Move assignment
+  player1 = Player("JaneDoe", "Maiden", 55, 55); // Move assignment
+  player5 = player1;                             // Copy assignment called
 
   return 0;
 }
