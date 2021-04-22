@@ -20,4 +20,4 @@ public:
   bool deposit(double amountToDeposit);
   bool withdraw(double amountToWithdraw);
   double getBalance() const;
-}
+};
