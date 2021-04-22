@@ -18,6 +18,8 @@ In case you want to quickly run and test your code, you can run it using the fol
 
 - #### [Storage duration & Linkage](content/storage-duration-linkage/README.md)
 
+  _... coming soon_
+
 - #### [Arrays and Vectors](content/arrays-and-vectors/README.md)
 
 - #### [Statements and Operators](content/statements-and-operators/README.md)
