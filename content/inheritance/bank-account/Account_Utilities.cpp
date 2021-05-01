@@ -83,7 +83,7 @@ void deposit(std::vector<Savings_Account> &accounts, double amountToDeposit)
 
 void withdraw(std::vector<Savings_Account> &accounts, double amountToWithdraw)
 {
-  std::cout << "\n <>>>>>>>>>> WITHDRAWING FROM ACCOUNTS <<<<<<<<<<>"
+  std::cout << "\n <>>>>>>>>>> WITHDRAWING FROM SAVINGS ACCOUNTS <<<<<<<<<<>"
             << "\n";
   for (auto &acc : accounts)
   {
@@ -133,6 +133,55 @@ void deposit(std::vector<Checkings_Account> &accounts, double amountToDeposit)
 void withdraw(std::vector<Checkings_Account> &accounts, double amountToWithdraw)
 {
   std::cout << "\n <>>>>>>>>>> WITHDRAWING FROM CHECKINGS ACCOUNTS <<<<<<<<<<>"
+            << "\n";
+  for (auto &acc : accounts)
+  {
+    if (acc.withdraw(amountToWithdraw))
+    {
+      std::cout << "---- " << amountToWithdraw << " was successfully withdrawn from account:\n"
+                << acc << "\n";
+    }
+    else
+    {
+      std::cout << "---- " << amountToWithdraw << " failed to be withdrawn from account:\n"
+                << acc << "\n";
+    }
+  }
+}
+
+// utility functions for Savings_Account class:
+void display(const std::vector<Trust_Account> &accounts)
+{
+  std::cout << "\n <>>>>>>>>>> TRUST ACCOUNTS LIST <<<<<<<<<<>"
+            << "\n";
+  for (const auto &acc : accounts)
+  {
+    std::cout << acc << "\n";
+  }
+}
+
+void deposit(std::vector<Trust_Account> &accounts, double amountToDeposit)
+{
+  std::cout << "\n <>>>>>>>>>> DEPOSITING TO TRUST ACCOUNTS <<<<<<<<<<>"
+            << "\n";
+  for (auto &acc : accounts)
+  {
+    if (acc.deposit(amountToDeposit))
+    {
+      std::cout << "---- " << amountToDeposit << " was credited into account:\n"
+                << acc << "\n";
+    }
+    else
+    {
+      std::cout << "---- " << amountToDeposit << " failed to be deposited to account:\n"
+                << acc << "\n";
+    }
+  }
+}
+
+void withdraw(std::vector<Trust_Account> &accounts, double amountToWithdraw)
+{
+  std::cout << "\n <>>>>>>>>>> WITHDRAWING FROM TRUST ACCOUNTS <<<<<<<<<<>"
             << "\n";
   for (auto &acc : accounts)
   {
