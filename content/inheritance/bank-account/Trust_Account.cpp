@@ -17,12 +17,11 @@ bool Trust_Account::deposit(double amountToDeposit)
 
 bool Trust_Account::withdraw(double amountToWithdraw)
 {
-  withdrawCount++;
-  if (withdrawCount > 3)
+  if ((withdrawCount + 1) > 3)
   {
     return false;
   }
-
+  withdrawCount++;
   return Savings_Account::withdraw(amountToWithdraw);
 }
 

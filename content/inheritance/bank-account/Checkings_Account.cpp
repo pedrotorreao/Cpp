@@ -7,7 +7,7 @@ Checkings_Account::Checkings_Account(std::string userName, double userBalance, d
 
 bool Checkings_Account::withdraw(double amountToWithdraw)
 {
-  amountToWithdraw -= fee;
+  amountToWithdraw += fee;
 
   return Account::withdraw(amountToWithdraw);
 }

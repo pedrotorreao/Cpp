@@ -24,4 +24,4 @@ public:
       double depositBonus = default_deposit_bonus);
   bool deposit(double amountToDeposit);
   bool withdraw(double amountToWithdraw);
-}
+};
