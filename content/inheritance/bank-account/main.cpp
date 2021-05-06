@@ -11,7 +11,7 @@ int main()
   std::cout.precision(2);
   std::cout << std::fixed;
 
-  // Accounts
+  // Accounts:
   std::vector<Account> accounts;
   accounts.push_back(Account{});
   accounts.push_back(Account{"Larry"});
@@ -22,8 +22,7 @@ int main()
   deposit(accounts, 1000);
   withdraw(accounts, 2000);
 
-  // Savings
-
+  // Savings Accounts:
   std::vector<Savings_Account> sav_accounts;
   sav_accounts.push_back(Savings_Account{});
   sav_accounts.push_back(Savings_Account{"Superman"});
@@ -34,8 +33,7 @@ int main()
   deposit(sav_accounts, 1000);
   withdraw(sav_accounts, 2000);
 
-  // Checkings
-
+  // Checkings Accounts:
   std::vector<Checkings_Account> check_accounts;
   check_accounts.push_back(Checkings_Account{});
   check_accounts.push_back(Checkings_Account{"Iron Man"});
@@ -46,8 +44,7 @@ int main()
   deposit(check_accounts, 1000);
   withdraw(check_accounts, 2000);
 
-  // Trust
-
+  // Trust Accounts:
   std::vector<Trust_Account> trust_accounts;
   trust_accounts.push_back(Trust_Account{});
   trust_accounts.push_back(Trust_Account{"Thor"});
@@ -55,11 +52,12 @@ int main()
   trust_accounts.push_back(Trust_Account{"Dr. Stranger", 5000});
 
   display(trust_accounts);
-  deposit(trust_accounts, 6000);
-  withdraw(trust_accounts, 2500);
-  withdraw(trust_accounts, 100);
-  withdraw(trust_accounts, 100);
-  withdraw(trust_accounts, 200);
+  deposit(trust_accounts, 6000);  // PASSES: 6000 + deposit bonus
+  withdraw(trust_accounts, 2500); // FAILS: amount > 20% of account's balance
+  withdraw(trust_accounts, 100);  // PASSES
+  withdraw(trust_accounts, 100);  // PASSES
+  withdraw(trust_accounts, 200);  // PASSES
+  withdraw(trust_accounts, 500);  // FAILS: max withdraw count reached
 
   return 0;
 }

@@ -11,10 +11,7 @@ private:
   static constexpr double default_balance = 0.0;
   static constexpr double default_fee = 1.5;
 
-protected:
-  double fee;
-
 public:
-  Checkings_Account(std::string acc_user = default_name, double acc_balance = default_balance, double fee = default_fee);
+  Checkings_Account(std::string acc_user = default_name, double acc_balance = default_balance);
   bool withdraw(double amountToWithdraw);
 };

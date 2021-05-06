@@ -1,13 +1,14 @@
 #include "Checkings_Account.h"
 
-Checkings_Account::Checkings_Account(std::string userName, double userBalance, double accFee)
-    : Account{userName, userBalance}, fee{accFee}
+Checkings_Account::Checkings_Account(std::string userName, double userBalance)
+    : Account{userName, userBalance}
 {
 }
 
+// Every withdrawal transaction has a fee of $1.50 per withdrawal:
 bool Checkings_Account::withdraw(double amountToWithdraw)
 {
-  amountToWithdraw += fee;
+  amountToWithdraw += default_fee;
 
   return Account::withdraw(amountToWithdraw);
 }
@@ -16,7 +17,7 @@ std::ostream &operator<<(std::ostream &os, const Checkings_Account &accountObjec
 {
   os << "[Account holder: " << accountObject.acc_user
      << " - Balance: " << accountObject.acc_balance
-     << " - Withdraw Fee: $" << accountObject.fee << "]"
+     << " - Withdraw Fee: $" << accountObject.default_fee << "]"
      << "\n";
   return os;
 }
