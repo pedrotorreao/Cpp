@@ -1,6 +1,6 @@
-## C++ : Dummy Guide
+## C++ : Practical Guide
 
-This is a repository about C++ fundamentals. It is supposed to serve as a simple/quick reference guide and it contains a brief summary about the main concepts and a few examples and exercises. Additionaly, as I am also learning/studying much of the content here, the code and explanations may not (probably not) be the most efficient, readable and clear, so if you have suggestions of improvements, please feel free to contribute.
+This is a repository about C++ fundamentals. It is supposed to serve as a simple/quick reference guide and it contains a brief summary about the main concepts and a few examples and exercises. Additionaly, the code and explanations may not (probably not) be the most efficient, readable and clear, so if you have suggestions of improvements, please feel free to contribute.
 
 #### Where to run your code?
 
