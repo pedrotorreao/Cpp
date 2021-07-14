@@ -25,10 +25,10 @@ bool Account::withdraw(double amountToWithdraw)
   return true;
 }
 
-double Account::getBalance() const
-{
-  return acc_balance;
-}
+// double Account::getBalance() const
+// {
+//   return acc_balance;
+// }
 
 std::ostream &operator<<(std::ostream &os, const Account &accountObject)
 {

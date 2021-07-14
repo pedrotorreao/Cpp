@@ -16,5 +16,7 @@ protected:
 
 public:
   Savings_Account(std::string acc_user = default_name, double acc_balance = default_balance, double interest = default_interest);
-  bool deposit(double amountToDeposit);
+  virtual bool deposit(double amountToDeposit) override;
+  virtual bool withdraw(double amountToWithdraw) override;
+  virtual ~Savings_Account() = default;
 };

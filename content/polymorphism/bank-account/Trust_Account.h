@@ -23,6 +23,7 @@ public:
       std::string acc_user = default_name,
       double acc_balance = default_balance,
       double interest = default_interest);
-  bool deposit(double amountToDeposit);
-  bool withdraw(double amountToWithdraw);
+  virtual bool deposit(double amountToDeposit) override;
+  virtual bool withdraw(double amountToWithdraw) override;
+  virtual ~Trust_Account() = default;
 };

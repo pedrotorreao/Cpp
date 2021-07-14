@@ -12,6 +12,11 @@ bool Savings_Account::deposit(double amountToDeposit)
   return Account::deposit(amountToDeposit);
 }
 
+bool Savings_Account::withdraw(double amountToWithdraw)
+{
+  return Account::withdraw(amountToWithdraw);
+}
+
 std::ostream &operator<<(std::ostream &os, const Savings_Account &accountObject)
 {
   os << "[Account holder: " << accountObject.acc_user

@@ -2,8 +2,10 @@
 
 #include <iostream>
 #include <string>
+#include "I_Printable.h"
 
-class Account
+// Account is an abstract base class
+class Account : public I_Printable
 {
   friend std::ostream &operator<<(std::ostream &os, const Account &accountObject);
 
@@ -17,7 +19,10 @@ protected:
 
 public:
   Account(std::string acc_user = default_name, double acc_balance = default_balance);
-  bool deposit(double amountToDeposit);
-  bool withdraw(double amountToWithdraw);
-  double getBalance() const;
+  // 1.  Modify the Account class so that it is now an Abstract class by adding the following pure virtual functions:
+  virtual bool deposit(double amountToDeposit) = 0;
+  virtual bool withdraw(double amountToWithdraw) = 0;
+
+  // double getBalance() const;
+  virtual ~Account() = default; // C++ generated default destructor
 };

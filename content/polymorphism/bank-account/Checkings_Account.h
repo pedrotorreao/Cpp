@@ -13,5 +13,7 @@ private:
 
 public:
   Checkings_Account(std::string acc_user = default_name, double acc_balance = default_balance);
-  bool withdraw(double amountToWithdraw);
+  virtual bool withdraw(double amountToWithdraw) override;
+  virtual bool deposit(double amountToDeposit) override;
+  virtual ~Checkings_Account() = default;
 };

@@ -13,6 +13,11 @@ bool Checkings_Account::withdraw(double amountToWithdraw)
   return Account::withdraw(amountToWithdraw);
 }
 
+bool Checkings_Account::deposit(double amountToDeposit)
+{
+  return Account::deposit(amountToDeposit);
+}
+
 std::ostream &operator<<(std::ostream &os, const Checkings_Account &accountObject)
 {
   os << "[Account holder: " << accountObject.acc_user
