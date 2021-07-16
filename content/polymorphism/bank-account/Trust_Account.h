@@ -4,8 +4,6 @@
 
 class Trust_Account : public Savings_Account
 {
-  friend std::ostream &operator<<(std::ostream &os, const Trust_Account &accountObject);
-
 private:
   static constexpr const char *default_name = "Unused/Vacant Trust Account";
   static constexpr double default_balance = 0.0;
@@ -23,7 +21,11 @@ public:
       std::string acc_user = default_name,
       double acc_balance = default_balance,
       double interest = default_interest);
+
   virtual bool deposit(double amountToDeposit) override;
   virtual bool withdraw(double amountToWithdraw) override;
+
+  virtual void print(std::ostream &os) const override;
+
   virtual ~Trust_Account() = default;
 };

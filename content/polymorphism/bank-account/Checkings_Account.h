@@ -4,8 +4,6 @@
 
 class Checkings_Account : public Account
 {
-  friend std::ostream &operator<<(std::ostream &os, const Checkings_Account &accountObject);
-
 private:
   static constexpr const char *default_name = "Unused/Vacant Checkings Account";
   static constexpr double default_balance = 0.0;
@@ -13,7 +11,11 @@ private:
 
 public:
   Checkings_Account(std::string acc_user = default_name, double acc_balance = default_balance);
+
   virtual bool withdraw(double amountToWithdraw) override;
   virtual bool deposit(double amountToDeposit) override;
+
+  virtual void print(std::ostream &os) const override;
+
   virtual ~Checkings_Account() = default;
 };

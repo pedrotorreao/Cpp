@@ -27,14 +27,13 @@ bool Trust_Account::withdraw(double amountToWithdraw)
   return Savings_Account::withdraw(amountToWithdraw);
 }
 
-std::ostream &operator<<(std::ostream &os, const Trust_Account &accountObject)
+void Trust_Account::print(std::ostream &os) const
 {
-  os << "[Account holder: " << accountObject.acc_user
-     << " - Balance: " << accountObject.acc_balance
-     << " - Withdraws this year: " << accountObject.withdrawCount << " | Limit: 3"
+  os << "[Account holder: " << this->acc_user
+     << " - Balance: " << this->acc_balance
+     << " - Withdraws this year: " << this->withdrawCount << " | Limit: 3"
      << "\n"
-     << "Max withdraw amount allowed: $" << (accountObject.acc_balance * accountObject.default_max_withdraw_pct)
+     << "Max withdraw amount allowed: $" << (this->acc_balance * this->default_max_withdraw_pct)
      << "]"
      << "\n";
-  return os;
 }

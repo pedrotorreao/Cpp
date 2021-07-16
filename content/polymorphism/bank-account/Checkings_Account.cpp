@@ -18,11 +18,10 @@ bool Checkings_Account::deposit(double amountToDeposit)
   return Account::deposit(amountToDeposit);
 }
 
-std::ostream &operator<<(std::ostream &os, const Checkings_Account &accountObject)
+void Checkings_Account::print(std::ostream &os) const
 {
-  os << "[Account holder: " << accountObject.acc_user
-     << " - Balance: " << accountObject.acc_balance
-     << " - Withdraw Fee: $" << accountObject.default_fee << "]"
+  os << "[Account holder: " << this->acc_user
+     << " - Balance: " << this->acc_balance
+     << " - Withdraw Fee: $" << this->default_fee << "]"
      << "\n";
-  return os;
 }
