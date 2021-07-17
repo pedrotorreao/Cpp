@@ -10,5 +10,5 @@ class I_Printable
 
 public:
   virtual void print(std::ostream &os) const = 0; // pure virtual function
-  virtual ~I_Printable();
+  virtual ~I_Printable() = default;
 };
