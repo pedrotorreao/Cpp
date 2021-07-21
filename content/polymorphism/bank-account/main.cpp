@@ -11,18 +11,6 @@ int main()
   std::cout.precision(2);
   std::cout << std::fixed;
 
-  // Accounts now is an abstract class, cannot have objects derived from it
-  // std::vector<Account *> accounts;
-  // accounts.push_back(Account{});
-  // accounts.push_back(Account{"Larry"});
-  // accounts.push_back(Account{"Moe", 2000});
-  // accounts.push_back(Account{"Curly", 5000});
-
-  // display(accounts);
-  // deposit(accounts, 1000);
-  // withdraw(accounts, 2000);
-
-  // Savings Accounts:
   std::vector<Account *> accounts;
   accounts.push_back(new Savings_Account());
   accounts.push_back(new Savings_Account("Superman"));
@@ -56,6 +44,13 @@ int main()
   withdraw(accounts, 100);  // PASSES
   withdraw(accounts, 200);  // PASSES
   withdraw(accounts, 500);  // FAILS: max withdraw count reached
+
+  // deallocate memory previously allocated on the heap in order to
+  // to free this unused storage and avoid memory leaks:
+  for (auto ptr : accounts)
+  {
+    delete ptr;
+  }
 
   return 0;
 }
