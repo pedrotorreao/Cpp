@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include "I_Printable.h"
+#include "IllegalBalanceException.h"
+#include "InsufficientFundsException.h"
 
 // Account is an abstract base class
 class Account : public I_Printable
