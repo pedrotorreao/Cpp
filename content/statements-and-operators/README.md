@@ -51,7 +51,41 @@ int sum = expression ? operand_1 : operand_2;
 
 #### Assignment operator
 
-These operators are used to modify the value of a given variable/object by assigning a new value to it. Assignment is different from initialization.
+These operators are used to modify the value of a given variable/object by assigning a new value to it. In the assignment statement below, `b` is an expression that is evaluated to a value and this value is stored in the memory address represented by `a`:
+
+```c++
+a = b;
+```
+
+As C++ is strongly typed, the compiler will check if both `a` and `b` are type compatible and if they're are not it will throw an error. Also, `a` must be assignable (i.e. a l-value), which means that `a` cannot be a literal or a constant, but a variable/identifier of a memory address where this new value can be stored. For example:
+
+```c++
+int age {27};                       // initialization
+const std::string name = "Pedro";   // initialization
+
+// assignment, expression age+1 is evaluated and the result
+// is stored in the address represented by age:
+age = age + 1;
+
+// error, age and name have different data types:
+age = name;
+
+// error, literals cannot be assigned values because they are not l-values,// they don't have a location in memory:
+28 = age + 1;
+
+// error, name is qualified as constant, its value cannot be changed:
+name = "Jose";
+```
+
+Please note that assignment is different from initialization. The later happens when the variable is declared and it has a value attributed to it from the get-go. The former is related to modifying the value that already exists in the variable.
+
+```c++
+int a {34}; // initialization
+int b {29}; // initialization
+
+a = a + 2*b;  // assignment
+b = b*a;      // assignment
+```
 
 #### Arithmetic operators
 
