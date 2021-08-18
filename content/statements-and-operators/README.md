@@ -89,7 +89,78 @@ b = b*a;      // assignment
 
 #### Arithmetic operators
 
-Used to perform mathematical operations on operands.
+Used to perform mathematical operations on operands. The operators for addition, subtraction, multiplication and division are overloaded, which just means that they work with different types, so we can add/subtract/multiply/divide two integers, two floats, two doubles, etc.
+
+a. addition (`+`): used for adding two numbers.
+
+```c++
+int num1 {23};
+int num2 {11};
+
+// inline calculation - outputs: 23+11=34
+std::cout << num1 << "+" << num2 << "=" << num1 + num2 << "\n";
+
+// do the calculation and assign it to the variable res:
+int res {0};        // initialize res to 0.
+res = num1 + num2;  // res now is equal to 34.
+```
+
+b. subtraction (`-`): used for subracting one number by the other.
+
+```c++
+int num1 {55};
+int num2 {9};
+
+// inline calculation - outputs: 55-9=46
+std::cout << num1 << "-" << num2 << "=" << num1 + num2 << "\n";
+
+// do the calculation and assign it to the variable res:
+int res {0};        // initialize res to 0.
+res = num1 - num2;  // res now is equal to 46.
+res = num2 - num1;  // res now is equal to -46.
+```
+
+c. multiplication (`*`): used for multiplying one number by the other.
+
+```c++
+int num1 {12};
+int num2 {3};
+
+// inline calculation - outputs: 12*3=36
+std::cout << num1 << "*" << num2 << "=" << num1 * num2 << "\n";
+
+// do the calculation and assign it to the variable res:
+int res {0};        // initialize res to 0.
+res = num1 + num2;  // res now is equal to 36.
+```
+
+d. division (`/`): used for dividing one number by the other.
+
+```c++
+int num1 {8};
+int num2 {2};
+
+// inline calculation - outputs: 8/2=4
+std::cout << num1 << "/" << num2 << "=" << num1 / num2 << "\n";
+
+// do the calculation and assign it to the variable res:
+int res {0};        // initialize res to 0.
+res = num1 / num2;  // res now is equal to 4.
+```
+
+e. modulo or remainder (`%`): used for calculating the remainder of a division between two integers.
+
+```c++
+int num1 {7};
+int num2 {2};
+
+// inline calculation - outputs: 7%2=1
+std::cout << num1 << "%" << num2 << "=" << num1 % num2 << "\n";
+
+// do the calculation and assign it to the variable res:
+int res {0};        // initialize res to 0.
+res = num1 % num2;  // res now is equal to 34.
+```
 
 #### Increment and Decrement
 
