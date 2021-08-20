@@ -190,7 +190,29 @@ std::cout << num++ << "\n"; // outputs 8
 std::cout << num << "\n";   // outputs 9 (updated value)
 ```
 
-b. decrement (`--`): subtracts 1 to its operand and can also be used with integers, floating point types and pointers.
+b. decrement (`--`): subtracts 1 to its operand and can also be used with integers, floating point types and pointers. Behavior is analog to the increment operator.
+
+```c++
+int num {5};
+
+std::cout << num << "\n"; // outputs 5
+
+num--;
+std::cout << num << "\n"; // outputs 4
+
+--num;
+std::cout << num << "\n"; // outputs 3
+
+// the difference between prefix and postfix becomes evident when using
+// these operators inside expressions:
+
+//--prefix: num is decremented and then sent to the output stream
+std::cout << --num << "\n"; // outputs 2
+
+//--postfix: num is sent to the output and then decremented
+std::cout << num-- << "\n"; // outputs 2
+std::cout << num << "\n";   // outputs 1 (updated value)
+```
 
 #### Equality
 
