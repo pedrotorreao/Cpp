@@ -105,7 +105,7 @@ int res {0};        // initialize res to 0.
 res = num1 + num2;  // res now is equal to 34.
 ```
 
-b. subtraction (`-`): used for subracting one number by the other.
+b. subtraction (`-`): used for subtracting one number by the other.
 
 ```c++
 int num1 {55};
@@ -159,12 +159,38 @@ std::cout << num1 << "%" << num2 << "=" << num1 % num2 << "\n";
 
 // do the calculation and assign it to the variable res:
 int res {0};        // initialize res to 0.
-res = num1 % num2;  // res now is equal to 34.
+res = num1 % num2;  // res now is equal to 1.
 ```
 
 #### Increment and Decrement
 
-Interesting operators which work as both assignment and arithmetic.
+Interesting operators which work as both assignment and arithmetic. Both can be used as prefix (`++oper_name`) and postfix (`oper_name++`), behaving differently for each case.
+
+a. increment (`++`): adds 1 to its operand and can be used with integers, floating point types and pointers.
+
+```c++
+int num {5};
+
+std::cout << num << "\n"; // outputs 5
+
+num++;
+std::cout << num << "\n"; // outputs 6
+
+++num;
+std::cout << num << "\n"; // outputs 7
+
+// the difference between prefix and postfix becomes evident when using
+// these operators inside expressions:
+
+//--prefix: num is incremented and then sent to the output stream
+std::cout << ++num << "\n"; // outputs 8
+
+//--postfix: num is sent to the output and then incremented
+std::cout << num++ << "\n"; // outputs 8
+std::cout << num << "\n";   // outputs 9 (updated value)
+```
+
+b. decrement (`--`): subtracts 1 to its operand and can also be used with integers, floating point types and pointers.
 
 #### Equality
 
