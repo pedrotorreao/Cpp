@@ -173,7 +173,7 @@ int num {5};
 
 std::cout << num << "\n"; // outputs 5
 
-num++;
+num++;  // equivalent to (oper_name = oper_name + 1) or (oper_name += 1)
 std::cout << num << "\n"; // outputs 6
 
 ++num;
@@ -197,7 +197,7 @@ int num {5};
 
 std::cout << num << "\n"; // outputs 5
 
-num--;
+num--;  // equivalent to (oper_name = oper_name - 1) or (oper_name -= 1)
 std::cout << num << "\n"; // outputs 4
 
 --num;
