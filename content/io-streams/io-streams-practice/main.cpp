@@ -32,23 +32,6 @@ int main()
                     {"Argentina", {{"Buenos Aires", 3010000, 723.77}}},
                 }};
 
-    // Unformatted display so you can see how to access the vector elements
-    std::cout << tours.title << std::endl;
-    for (auto country : tours.countries)
-    { // loop through the countries
-        std::cout << country.name << std::endl;
-        for (auto city : country.cities)
-        { // loop through the cities for each country
-            std::cout << "\t" << city.name
-                      << "\t" << city.population
-                      << "\t" << city.cost
-                      << std::endl;
-        }
-    }
-
-    std::cout << std::endl
-              << std::endl;
-
     displayTourInfo(tours);
 
     return 0;

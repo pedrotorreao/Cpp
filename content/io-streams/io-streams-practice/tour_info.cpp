@@ -5,24 +5,36 @@
 
 void displayTourInfo(const Tours &tour_data)
 {
-  std::cout << std::setw(50) << tour_data.title << "\n";
-  std::cout << std::setw(20) << std::left << "\nCountry"
-            << std::setw(25) << std::left << "City"
-            << std::setw(20) << std::left << "Population"
-            << std::setw(10) << "Price\n";
+  const int total_width{70};
 
-  std::cout << std::setfill('-');
-  std::cout << std::setw(70) << "-\n";
+  const int field_width1{20};
+  const int field_width2{15};
 
-  // for (auto country : tour_data.countries)
-  // { // loop through the countries
-  //   std::cout << country.name << std::endl;
-  //   for (auto city : country.cities)
-  //   { // loop through the cities for each country
-  //     std::cout << "\t" << city.name
-  //               << "\t" << city.population
-  //               << "\t" << city.cost
-  //               << std::endl;
-  //   }
-  // }
+  const int title_length = tour_data.title.size();
+
+  std::cout << std::setw((total_width - title_length) / 2) << "" << tour_data.title << "\n";
+
+  std::cout << std::setw(field_width1) << std::left << "\nCountry"
+            << std::setw(field_width1) << std::left << "City"
+            << std::setw(field_width2) << std::right << "Population"
+            << std::setw(field_width2) << std::right << "Price\n";
+
+  std::cout << std::setw(total_width)
+            << std::setfill('-')
+            << "" << std::endl; // display total_width dashes
+
+  std::cout << std::setfill(' ');                  // reset setfill to blank spaces
+  std::cout << std::setprecision(2) << std::fixed; // for displaying the cost with 2 decimal digits
+
+  for (auto country : tour_data.countries)
+  { // loop through the countries
+    for (size_t i = 0; i < country.cities.size(); ++i)
+    {
+      std::cout << std::setw(field_width1) << std::left << ((i == 0) ? country.name : "") // conditional operator
+                << std::setw(field_width1) << std::left << country.cities.at(i).name
+                << std::setw(field_width2) << std::right << country.cities.at(i).population
+                << std::setw(field_width2) << std::right << country.cities.at(i).cost
+                << std::endl;
+    }
+  }
 }
