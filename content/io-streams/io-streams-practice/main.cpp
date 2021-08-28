@@ -48,5 +48,8 @@ int main()
 
     std::cout << std::endl
               << std::endl;
+
+    displayTourInfo(tours);
+
     return 0;
 }

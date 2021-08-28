@@ -24,3 +24,5 @@ struct Tours
   std::string title;
   std::vector<Country> countries;
 };
+
+void displayTourInfo(const Tours &tour_data);
