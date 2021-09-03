@@ -216,6 +216,30 @@ std::cout << num << "\n";   // outputs 1 (updated value)
 
 #### Equality
 
+Equality operators are operators used when testing for equality. These operators are binary operators which compare the values of two expressions evaluating to a `Boolean` result.
+
+a. equality (`==`): check if two expressions evaluate to the same value. If so, the result will be `true`, if not, the result will be `false`. Obs.: It is easy to mistake the equality operator `==` with the assignment operator `=`.
+
+```c++
+int var_1 = 7;
+int var_2 = 4;
+
+std::cout << (var_1 == var_2) << "\n"; // outputs 0, which means false
+
+std::cout << (var_1 == (var_2 + 3)) << "\n"; // outputs 1, which means true
+```
+
+b. inequality (`!=`): check if two expressions evaluate to different values. If so, the result will be `true`, if not, the result will be `false`.
+
+```c++
+int var_1 = 7;
+int var_2 = 4;
+
+std::cout << (var_1 != var_2) << "\n"; // outputs 1, which means true
+
+std::cout << (var_1 != (var_2 + 3)) << "\n"; // outputs 0, which means false
+```
+
 #### Relational operators
 
 These operators allow us to compare the values of two operands.
