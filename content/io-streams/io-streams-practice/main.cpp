@@ -1,4 +1,6 @@
-// -- Formatting output: display the provided data in a nicely formatted table.
+/* -- Challenge description:
+Formatting output - display the provided data in a nicely formatted table.
+*/
 
 #include <iostream>
 #include <iomanip>
