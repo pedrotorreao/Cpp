@@ -1,5 +1,5 @@
-/* -- Challenge description:
-Formatting output - display the provided data in a nicely formatted table.
+/* -- Challenge - Formatting output: 
+Description: display the provided data in a nicely formatted table.
 */
 
 #include <iostream>
