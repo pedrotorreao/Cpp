@@ -13,8 +13,9 @@ Description:
 
 int main()
 {
+  std::string filename{"romeoandjuliet.txt"};
 
-  //..code
+  copyText(filename);
 
   return 0;
 }
