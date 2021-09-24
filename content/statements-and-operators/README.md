@@ -218,7 +218,7 @@ std::cout << num << "\n";   // outputs 1 (updated value)
 
 Equality operators are operators used when testing for equality. These operators are binary operators which compare the values of two expressions evaluating to a `Boolean` result.
 
-a. equality (`==`): check if two expressions evaluate to the same value. If so, the result will be `true`, if not, the result will be `false`. Obs.: It is easy to mistake the equality operator `==` with the assignment operator `=`.
+a. equality (`==`): checks if two expressions evaluate to the same value. If so, the result will be `true`, if not, the result will be `false`. Obs.: It is easy to mistake the equality operator `==` with the assignment operator `=`.
 
 ```c++
 int var_1 = 7;
@@ -229,7 +229,7 @@ std::cout << (var_1 == var_2) << "\n"; // outputs 0, which means false
 std::cout << (var_1 == (var_2 + 3)) << "\n"; // outputs 1, which means true
 ```
 
-b. inequality (`!=`): check if two expressions evaluate to different values. If so, the result will be `true`, if not, the result will be `false`.
+b. inequality (`!=`): checks if two expressions evaluate to different values. If so, the result will be `true`, if not, the result will be `false`.
 
 ```c++
 int var_1 = 7;
@@ -242,7 +242,73 @@ std::cout << (var_1 != (var_2 + 3)) << "\n"; // outputs 0, which means false
 
 #### Relational operators
 
-These operators allow us to compare the values of two operands.
+These operators allow us to compare the values of two operands. Similar to the equality operatos, relational operators are binary operators which compare the values of two expressions evaluating to a `Boolean` result. The syntax for them is
+
+> `expression_1` **operator** `expression_2`
+
+a. greater than (`>`): checks if the expression at left-hand side of the operator evaluates to a value greater than the value given by the expression at the rigth-hand side.
+
+```c++
+int var_1 = 7;
+int var_2 = 4;
+
+std::cout << (var_1 > var_2) << "\n"; // outputs 1 (true)
+
+std::cout << (var_1 > (var_2 + 3)) << "\n"; // outputs 0 (false)
+
+```
+
+b. greater than or equal to (`>=`): checks if the expression at left-hand side of the operator evaluates to a value greater or equal to the value given by the expression at the rigth-hand side.
+
+```c++
+int var_1 = 7;
+int var_2 = 4;
+
+std::cout << (var_1 >= var_2) << "\n"; // outputs 1 (true)
+
+std::cout << (var_1 >= (var_2 + 3)) << "\n"; // outputs 1 (true)
+
+```
+
+c. less than (`<`): checks if the expression at left-hand side of the operator evaluates to a value less than the value given by the expression at the rigth-hand side.
+
+```c++
+int var_1 = 7;
+int var_2 = 4;
+
+std::cout << (var_1 < var_2) << "\n"; // outputs 0 (false)
+
+std::cout << (var_1 < (var_2 + 4)) << "\n"; // outputs 1 (true)
+
+```
+
+d. less than or equal to (`<=`): checks if the expression at left-hand side of the operator evaluates to a value less or equal to the value given by the expression at the rigth-hand side.
+
+```c++
+int var_1 = 7;
+int var_2 = 4;
+
+std::cout << (var_1 <= var_2) << "\n"; // outputs 0 (true)
+
+std::cout << (var_1 <= (var_2 + 3)) << "\n"; // outputs 1 (true)
+
+```
+
+e. three-way comparison (`<=>`) [C++20]: determines for two expressions/objects `A` and `B` whether `A < B`, `A = B`, or `A > B` returning an integer. If this integer is less than `0` (`ans < 0`), `A` is less than `B`. In case this integer is equal to `0` (`ans == 0`), `A` is equal to `B`. Finally, if this integer is greater than `0` (`ans > 0`), `A` is greater than `B`.
+
+```c++
+int A = 5;
+int B = 10;
+
+auto ans = (A <=> B);
+
+if(ans < 0)
+  std::cout << "A less than B";
+else if (ans > 0)
+  std::cout << "A greater than B";
+else
+  std::cout << "A equal to B";
+```
 
 #### Logical operators
 
