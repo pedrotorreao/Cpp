@@ -312,7 +312,89 @@ else
 
 #### Logical operators
 
-Used to test for logical or boolean conditions.
+Used to test for logical or boolean conditions. These operators work on Boolean expressions and evaluate to a Boolean value themselves.
+
+a. negation (`!`): this is an unary operator that simply negates the result of the expression it is applied to. So if the expression evaluates to `true`, the operator `!` changes it to a `false` and vice-versa. See the truth table below:
+
+| expression_1 | result  |
+| ------------ | ------- |
+| `false`      | `true`  |
+| `true`       | `false` |
+
+```c++
+int num_1 {30};
+int num_2 {12};
+
+bool n = (num_1 > num_2); // since 30 > 12, n = true.
+bool m = !n; // since n is true, negating this value we get m = false.
+
+```
+
+b. logical AND (`&&`): this is a binary operator and the result is only `true` when both expressions evaluate to `true`. See truth table below for the possible scenarios:
+
+| expression_1 | expression_2 | result  |
+| ------------ | ------------ | ------- |
+| `false`      | `false`      | `false` |
+| `false`      | `true`       | `false` |
+| `true`       | `false`      | `false` |
+| `true`       | `true`       | `true`  |
+
+```c++
+int num_1 {30};
+int num_2 {12};
+bool expression_1, expression_2, result;
+
+expression_1 = (num_1 < num_2); // since 30 > 12, expression_1 evaluates to false.
+expression_2 = (num_1 == num_2); // since 30 > 12, expression_2 evaluates to false.
+result = expression_1 && expression_2; // by taking a look at the truth table, we know that result evaluates to false (false && false = false).
+
+
+expression_2 = (num_1 > num_2); // since 30 > 12, expression_2 evaluates to true.
+result = expression_1 && expression_2; // false && true = false
+
+
+expression_1 = (num_1 >= 29); // since num_1 = 30, expression_1 evaluates to true.
+expression_2 = !expression_1; // from previous topic, we know that expression_2 will evaluate to false;
+result = expression_1 && expression_2; // true && false = false
+
+
+expression_2 = ((num_1 - num_2) > num_2); // num_1 - num_2 = 18 and 18 > 12, so expression_2 evaluates to true.
+result = expression_1 && expression_2; // true && true = true
+
+```
+
+c. logical OR (`||`): this is a binary operator and the result is `true` whenever one of the expressions evaluate to `true`. See truth table below for the possible scenarios:
+
+| expression_1 | expression_2 | result  |
+| ------------ | ------------ | ------- |
+| `false`      | `false`      | `false` |
+| `false`      | `true`       | `true`  |
+| `true`       | `false`      | `true`  |
+| `true`       | `true`       | `true`  |
+
+```c++
+int num_1 {30};
+int num_2 {12};
+bool expression_1, expression_2, result;
+
+expression_1 = (num_1 < num_2); // since 30 > 12, expression_1 evaluates to false.
+expression_2 = (num_1 == num_2); // since 30 > 12, expression_2 evaluates to false.
+result = expression_1 && expression_2; // by taking a look at the truth table, we know that result evaluates to false (false && false = false).
+
+
+expression_2 = (num_1 > num_2); // since 30 > 12, expression_2 evaluates to true.
+result = expression_1 && expression_2; // false && true = true
+
+
+expression_1 = (num_1 >= 29); // since num_1 = 30, expression_1 evaluates to true.
+expression_2 = !expression_1; // from previous topic, we know that expression_2 will evaluate to false;
+result = expression_1 && expression_2; // true && false = true
+
+
+expression_2 = ((num_1 - num_2) > num_2); // num_1 - num_2 = 18 and 18 > 12, so expression_2 evaluates to true.
+result = expression_1 && expression_2; // true && true = true
+
+```
 
 #### Compound assignment
 
