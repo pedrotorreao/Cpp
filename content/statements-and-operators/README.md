@@ -396,6 +396,11 @@ result = expression_1 && expression_2; // true && true = true
 
 ```
 
+Just like we have for arithmetical operators, there is also the matter of precedence for logical operators. In case we're not using parenthesis to specify the order of evaluation:
+
+- `!` has higher precedence than `&&`
+- `&&` has higher precedence than `||`
+
 #### Compound assignment
 
 #### Precedence
