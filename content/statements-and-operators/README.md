@@ -403,4 +403,32 @@ Just like we have for arithmetical operators, there is also the matter of preced
 
 #### Compound assignment
 
+These commonly used operators provide a shorter syntax for assigning the results of an arithmetical or bitwise operator. The syntax for these operators is very simple, it is basically the operator we want to use immediately followed by an equal sign:
+
+> `expr_1` **operator**= `expr_2`
+
+The table below can be used as reference:
+
+a. arithmetical operators:
+
+| operator |        how to use         |            what it does             |
+| :------: | :-----------------------: | :---------------------------------: |
+|    +=    | `expr_1` **+**= `expr_2`  | `expr_1` = `expr_1` **+** `expr_2`  |
+|    -=    | `expr_1` **-**= `expr_2`  | `expr_1` = `expr_1` **-** `expr_2`  |
+|   \*=    | `expr_1` **\***= `expr_2` | `expr_1` = `expr_1` **\*** `expr_2` |
+|    /=    | `expr_1` **/**= `expr_2`  | `expr_1` = `expr_1` **/** `expr_2`  |
+|    %=    | `expr_1` **%**= `expr_2`  | `expr_1` = `expr_1` **%** `expr_2`  |
+|          |                           |                                     |
+
+b. bitwise operators:
+
+| operator |        how to use         |            what it does             |
+| :------: | :-----------------------: | :---------------------------------: |
+|   >>=    | `expr_1` **>>**= `expr_2` | `expr_1` = `expr_1` **>>** `expr_2` |
+|   <<=    | `expr_1` **<<**= `expr_2` | `expr_1` = `expr_1` **<<** `expr_2` |
+|    &=    | `expr_1` **&**= `expr_2`  | `expr_1` = `expr_1` **&** `expr_2`  |
+|    ^=    | `expr_1` **^**= `expr_2`  | `expr_1` = `expr_1` **^** `expr_2`  |
+|   \|=    | `expr_1` **\|**= `expr_2` | `expr_1` = `expr_1` **\|** `expr_2` |
+|          |                           |                                     |
+
 #### Precedence
