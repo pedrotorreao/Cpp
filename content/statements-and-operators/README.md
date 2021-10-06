@@ -432,3 +432,59 @@ b. bitwise operators:
 |          |                           |                                     |
 
 #### Precedence
+
+Operator precedence determines how operators are parsed concerning each other, i.e. the order in which the operations are performed. Operators with higher precedence become the operands of operators with lower precedence. The following table lists the precedence and associativity of some of the C++ operators. Operators are listed top to bottom, in `descending` precedence, i.e. operators with higher precedence above.
+
+| operator | associativity |
+| :-: | :-: |
+| `[]`(subscript), `->`(access), `.`(access), `()` | left to right |
+| `++`, `--`, `not`, `-`(unary), `*`(de-ref), `&`(address of), `sizeof` | right to left |
+| `*`, `/`, `%` | left to right |
+| `+`, `-` | left to right |
+| `<<`, `>>` | left to right |
+| `<`, `>`, `<=`, `>=` | left to right |
+| `==`, `!=` | left to right |
+| `&` (biwise AND) | left to right |
+| `^` (biwise XOR) | left to right |
+| `\|` (biwise OR) | left to right |
+| `&&` (logical AND) | left to right |
+| `\|\|` (logical OR) | left to right |
+| `=`, `op=`, `?:` | left to right |
+|  |  |
+
+The associativity column determines how operators of the same precedence are grouped in the absence of parentheses. Consider the expression below where `op1` and `op2` can represent any operator showed in the table above:
+
+> `expr_1` **op1** `expr_2` **op2** `expr_3`
+
+a. If `op1` and `op2` have different precedence levels (see the table above), the operator with the highest precedence goes first and associativity does not matter.
+
+```cpp
+int res_1 = 3 + 11 - 21 / 7;
+// res_1 = 3 + 11 - (21 / 7) = 3 + 11 - 3 = 11
+
+auto res_2 = 1 + 3 * 9 >= 12 % 3 + 17;
+// res_2 = (1 + (3 * 9)) >= ((12 % 3) + 17) = (1 + 27) >= (0 + 17) = true
+```
+
+b. In case `op1` and `op2` have the same precedence levels, then it is necessary to understand their associativities. Left to right associativity means that the expression provided above will be interpreted as:
+
+> (`expr_1` **op1** `expr_2`) **op2** `expr_3`
+
+```cpp
+int res = 6 * 12 / 8 % 5;
+// res = ((6 * 12) / 8) % 5 = (72 / 8) % 5 = 9 % 4 = 4
+```
+
+Naturally, right to left associativity means that the same expression will be interpreted as:
+
+> `expr_1` **op1** (`expr_2` **op2** `expr_3`)
+
+```cpp
+int nums[4] {7,2,3,4};
+int *p = nums; // p points to the first element of nums
+
+std::cout << ++*p << "\n"; // dereferences it and the increments it
+// std::cout << ++(*p) << "\n"; -- outputs 8
+```
+
+Best practice is to always use parenthesis to specify the order of the operations and leave no doubt.
