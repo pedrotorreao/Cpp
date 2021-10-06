@@ -12,19 +12,17 @@ In case you want to quickly run and test your code, you can run it using the fol
 
 ### Table of Contents
 
-- #### [C++ Compilation Process](content/compilation-process/README.md)
+- #### [C++ Compilation Process](content/compilation-process/README.md) :white_check_mark:
 
-- #### [Variables and Constants](content/variables-and-constants/README.md)
+- #### [Variables and Constants](content/variables-and-constants/README.md) :white_check_mark:
 
 - #### [Storage duration & Linkage](content/storage-duration-linkage/README.md)
 
   _... coming soon_
 
-- #### [Arrays and Vectors](content/arrays-and-vectors/README.md)
+- #### [Arrays and Vectors](content/arrays-and-vectors/README.md) :white_check_mark:
 
-- #### [Statements and Operators](content/statements-and-operators/README.md)
-
-  _... coming soon_
+- #### [Statements and Operators](content/statements-and-operators/README.md) :white_check_mark:
 
 - #### [Controlling Program Flow](content/controlling-program-flow/README.md)
 

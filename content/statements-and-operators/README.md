@@ -488,3 +488,10 @@ std::cout << ++*p << "\n"; // dereferences it and the increments it
 ```
 
 Best practice is to always use parenthesis to specify the order of the operations and leave no doubt.
+
+#### References
+
+- [cppreference: C++ Operator Precedence](https://en.cppreference.com/w/cpp/language/operator_precedence)
+- [wikipedia: Operator associativity](https://en.wikipedia.org/wiki/Operator_associativity)
+
+### [Table of Contents](../../README.md)
