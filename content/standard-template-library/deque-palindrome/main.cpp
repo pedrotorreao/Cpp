@@ -30,8 +30,49 @@ Description:
 
 bool is_palindrome(const std::string &s)
 {
-  // ...use a deque to solve the problem.
-  return false;
+  std::deque<char> dq{};
+
+  for (const auto &charac : s)
+  {
+    int code = int(charac);
+    if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122))
+    {
+      dq.push_back(toupper(charac));
+    }
+  }
+
+  auto it_1 = dq.begin();
+  auto it_2 = dq.rbegin();
+  auto step = dq.size() / 2;
+
+  while (step != 0)
+  {
+    if ((*it_1) != (*it_2))
+    {
+      return false;
+    }
+
+    ++it_1;
+    ++it_2;
+    --step;
+  }
+
+  return true;
+
+  /*  // alternative solution:
+    while (dq.size() > 1)
+    {
+      char char_front = dq.front();
+      char char_back = dq.back();
+
+      dq.pop_back();
+      dq.pop_front();
+
+      if (char_front != char_back)
+      {
+        return false;
+      }
+    } */
 }
 
 int main()
