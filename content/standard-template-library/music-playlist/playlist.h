@@ -22,17 +22,15 @@ public:
     this->playlist_size = 0;
   }
 
-  void add_song(std::string name, std::string artist, std::string rating);
+  // getters:
+  std::string get_pl_name(void);
+  std::list<Song>::iterator get_songs_it(void);
+  std::list<Song> get_pl_songs(void);
+  int get_size(void);
+
+  void add_song(std::string name, std::string artist, int rating);
   void del_song(std::string name, std::string artist);
-  void display_playlists(void);
+  void list_songs(void);
 
   ~Playlist() = default;
 };
-
-Playlist::Playlist(/* args */)
-{
-}
-
-Playlist::~Playlist()
-{
-}

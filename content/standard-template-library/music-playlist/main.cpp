@@ -23,6 +23,7 @@ Description:
 */
 
 #include <iostream>
+#include <iomanip>
 #include <list>
 #include <string>
 #include "song.h"
@@ -31,7 +32,38 @@ Description:
 
 int main()
 {
-  //..driver code
+  char user_choice{};
+  std::list<Playlist> playlists;
+
+  do
+  {
+    display_menu();
+
+    std::cin >> user_choice;
+    if (int(user_choice) >= 97 && int(user_choice) <= 122)
+    {
+      user_choice = toupper(user_choice);
+    }
+
+    if (playlists.empty() && user_choice != '1')
+    {
+      std::cerr << "There are no playlists available!";
+      continue;
+    }
+
+    auto pl_it = playlists.begin();
+
+    std::list<Song> songs;
+    if (!playlists.empty())
+    {
+      songs = pl_it->get_pl_songs();
+    }
+
+    auto sg_it = pl_it->get_songs_it();
+
+    process_user_input(user_choice, playlists, pl_it, songs, sg_it);
+
+  } while (std::toupper(user_choice) != 'Q');
 
   return 0;
 }
