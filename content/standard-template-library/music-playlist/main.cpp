@@ -35,6 +35,10 @@ int main()
   char user_choice{};
   std::list<Playlist> playlists;
 
+  playlists.push_back({"Empty", "Unknown"});
+
+  std::list<Playlist>::iterator pl_it = playlists.begin();
+
   do
   {
     display_menu();
@@ -47,13 +51,14 @@ int main()
 
     if (playlists.empty() && user_choice != '1')
     {
-      std::cerr << "There are no playlists available!";
+      std::cerr << "\n>> There are no playlists available!\n";
       continue;
     }
 
-    auto pl_it = playlists.begin();
+    // auto pl_it = playlists.begin();
 
     std::list<Song> songs;
+
     if (!playlists.empty())
     {
       songs = pl_it->get_pl_songs();

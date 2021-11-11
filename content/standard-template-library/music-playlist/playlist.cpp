@@ -31,23 +31,33 @@ void Playlist::add_song(std::string name, std::string artist, int rating)
 
 void Playlist::del_song(std::string name, std::string artist)
 {
-  auto it = this->playlist_songs.begin();
-  while (it != this->playlist_songs.end())
+  if (this->playlist_size > 0)
   {
-    if ((it->get_name() == name) && (it->get_artist() == artist))
+    auto it = this->playlist_songs.begin();
+    while (it != this->playlist_songs.end())
     {
-      break;
+      if ((it->get_name() == name) && (it->get_artist() == artist))
+      {
+        break;
+      }
+      ++it;
     }
-    ++it;
+    if (it != this->playlist_songs.end())
+    {
+      this->playlist_songs.erase(it);
+    }
+    this->playlist_size--;
   }
-  if (it != this->playlist_songs.end())
+  else
   {
-    this->playlist_songs.erase(it);
+    std::cout << "Playlist " << this->playlist_name << " is already empty.\n";
   }
-  this->playlist_size--;
 }
 void Playlist::list_songs(void)
 {
+  std::cout << "Playlist name: " << this->playlist_name
+            << "\t\tOwner: " << this->playlist_owner << "\n";
+
   auto it = this->playlist_songs.begin();
   while (it != this->playlist_songs.end())
   {

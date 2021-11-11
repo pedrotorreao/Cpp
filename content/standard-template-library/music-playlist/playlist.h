@@ -19,6 +19,7 @@ public:
   Playlist(std::string name, std::string owner)
   {
     this->playlist_name = name;
+    this->playlist_owner = owner;
     this->playlist_size = 0;
   }
 

@@ -23,7 +23,7 @@ void display_menu()
   std::cout << "Enter a selection (Q to quit): ";
 }
 
-void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::list<Playlist>::iterator pl_it, std::list<Song> &sgs, std::list<Song>::iterator &sg_it)
+void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::list<Playlist>::iterator &pl_it, std::list<Song> &sgs, std::list<Song>::iterator &sg_it)
 {
 
   switch (usr_choice)
@@ -32,9 +32,12 @@ void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::li
   {
     std::string pl_name, pl_owner;
     std::cout << "Enter playlist name: ";
-    std::cin >> pl_name;
+    std::cin.ignore();
+    std::getline(std::cin, pl_name);
+
     std::cout << "Enter playlist owner: ";
-    std::cin >> pl_owner;
+    std::cin.ignore();
+    std::getline(std::cin, pl_owner);
 
     pl.push_back({pl_name, pl_owner});
   }
@@ -50,8 +53,9 @@ void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::li
 
     if (pl_it == pl.end())
     {
-      pl.begin();
+      pl_it = pl.begin();
     }
+    std::cout << "Current Playlist: " << pl_it->get_pl_name() << "\n";
   }
   break;
   case '4':
@@ -63,7 +67,9 @@ void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::li
     else
     {
       pl_it = pl.end();
+      --pl_it;
     }
+    std::cout << "Current Playlist: " << pl_it->get_pl_name() << "\n";
   }
   break;
   case '5':
@@ -74,9 +80,16 @@ void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::li
   break;
   case 'F':
   {
-    sg_it = pl_it->get_songs_it();
+    if (pl_it->get_size())
+    {
+      sg_it = pl_it->get_songs_it();
 
-    std::cout << "Playing: " << sg_it->get_name() << "\n";
+      std::cout << "Playing: " << sg_it->get_name() << "\n";
+    }
+    else
+    {
+      std::cout << "Current Playlist " << pl_it->get_pl_name() << " is empty\n";
+    }
   }
   break;
   case 'N':
@@ -109,9 +122,13 @@ void process_user_input(const char &usr_choice, std::list<Playlist> &pl, std::li
     std::string name{}, artist{};
     int rating{};
     std::cout << "Enter the name of the song: ";
-    std::cin >> name;
+    std::cin.ignore();
+    std::getline(std::cin, name);
+
     std::cout << "Enter the name of the artist: ";
-    std::cin >> artist;
+    std::cin.ignore();
+    std::getline(std::cin, artist);
+
     std::cout << "Enter your rating for this song (1-5): ";
     std::cin >> rating;
 
