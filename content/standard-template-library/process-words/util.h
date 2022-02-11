@@ -10,3 +10,9 @@
  */
 
 #pragma once
+
+void display_results(const std::map<std::string, int> &wordCount);
+
+void display_results(const std::map<std::string, std::set<int>> &wordLocation);
+
+void clean_line(std::string &raw_line);
