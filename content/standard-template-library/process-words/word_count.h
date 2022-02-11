@@ -10,3 +10,7 @@
  */
 
 #pragma once
+
+void word_counter(const std::string &filename) {
+  //..
+}

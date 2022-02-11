@@ -8,3 +8,7 @@
  * @copyright Copyright (c) 2022
  *
  */
+
+#pragma once
+
+void word_locator(const std::string &filename);
