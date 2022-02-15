@@ -11,6 +11,4 @@
 
 #pragma once
 
-void word_counter(const std::string &filename) {
-  //..
-}
+void word_counter(const std::string &filename);
