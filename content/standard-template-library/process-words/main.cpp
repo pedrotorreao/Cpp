@@ -50,9 +50,13 @@ once you read in a line from the file.
 #include "word_location.h"
 
 int main() {
-  // .. part 1:
+  std::string filename{"words.txt"};
 
-  // .. part 2:
+  // Part 1 - Count words:
+  word_counter(filename);
+
+  // Part 2 - Locate words:
+  word_locator(filename);
 
   return 0;
 }
